@@ -37,7 +37,7 @@ namespace OpenAIApp.Services
         public OpenAIServices( IOptionsMonitor<OpenAIConfig> optionsMonitor) 
         {
             _openAIConfig = optionsMonitor.CurrentValue;
-            client = new OpenAIClient(_openAIConfig.Key);
+            client = new OpenAIClient(new Uri(_openAIConfig.Uri),new AzureKeyCredential(_openAIConfig.Key));
 
         }
         public async Task<string> GetChatGPTResponse(string query)
