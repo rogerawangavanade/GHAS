@@ -30,11 +30,11 @@
     width: 45%;
 }
 
-.message.user {
-    background-color: #999;
-    color: #fff;
-    margin-left: auto;
-}
+    .message.user {
+        background-color: #999;
+        color: #fff;
+        margin-left: auto;
+    }
 /* Message input styles */
 .message-input {
     display: flex;
