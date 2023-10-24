@@ -1,7 +1,8 @@
 export class ChatService {
     constructor() {
-        this.baseUrl = 'https://openaichatbotapiservice.azurewebsites.net';
-        // this.baseUrl = "https://localhost:7126"
+        //this.baseUrl = 'https://openaichatbotapiservice.azurewebsites.net';
+        //LOCAL
+         this.baseUrl = "https://localhost:7038"
     }
 
     async getChatGPTResponse(prompt) {
