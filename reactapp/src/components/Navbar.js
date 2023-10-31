@@ -1,5 +1,6 @@
 import React from "react";
 import { SignInButton } from "./SignInButton";
+import { SignOutButton } from "./SignOutButton";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { useIsAuthenticated } from "@azure/msal-react";

@@ -1,10 +1,13 @@
+using Microsoft.Identity.Web;
 using OpenAIApp.Congurations;
 using OpenAIApp.Services;
+using webapi.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.Configure<OpenAIConfig>(builder.Configuration.GetSection("OpenAI"));
+builder.Services.Configure<AzureAdConfig>(builder.Configuration.GetSection("AzureAd"));
 builder.Services.AddControllers();
 builder.Services.AddCors(options =>
 {
@@ -12,11 +15,13 @@ builder.Services.AddCors(options =>
     {
         builder
             .WithOrigins("https://openaichatbotreactservice.azurewebsites.net")
-            //.WithOrigins("https://localhost:3000")
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
 });
+
+builder.Services.Configure<AzureAdConfig>(builder.Configuration.GetSection("AzureAd"));
+builder.Services.AddSingleton<AzureAdServices>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -37,6 +42,7 @@ app.UseCors();
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

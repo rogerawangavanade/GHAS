@@ -1,8 +1,5 @@
-﻿using Azure;
-using Azure.AI.OpenAI;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using OpenAIApp.Services;
-using System.Data;
 
 namespace ChatBot.Controllers
 {
