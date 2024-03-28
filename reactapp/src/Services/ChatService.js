@@ -1,13 +1,14 @@
 export class ChatService {
     constructor() {
-        this.baseUrl = 'https://openaichatbotapiexample1.azurewebsites.net';
-        // this.baseUrl = "https://localhost:7126"
+        this.baseUrl = 'https://openaichatbotapiservice.azurewebsites.net';
+        //LOCAL
+        //  this.baseUrl = "https://localhost:7038"
     }
 
-    async getChatGPTPizzaConversation(query) {
+    async getChatGPTResponse(prompt) {
         try {
             // Include the 'query' parameter in the URL
-            const url = `${this.baseUrl}/api/OpenAI/GetChatGPTPizzaConversation?query=${encodeURIComponent(query)}`;
+            const url = `${this.baseUrl}/api/OpenAI/GetChatGPTResponse?prompt=${encodeURIComponent(prompt)}`;
             const request = await fetch(url);
             const data = await request.text();
             return data;

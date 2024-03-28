@@ -6,10 +6,10 @@ function ChatApp() {
     const [newMessage, setNewMessage] = useState('');
 
     // Initial response from ChatGPT (runs once)
-    const fetchData = async (query) => {
+    const fetchData = async (prompt) => {
         try {
             const service = new ChatService();
-            const text = await service.getChatGPTPizzaConversation(query);
+            const text = await service.getChatGPTResponse(prompt);
             const message = { text: text, sender: 'User 2' };
             setMessages((prevMessages) => [...prevMessages, message]);
         }

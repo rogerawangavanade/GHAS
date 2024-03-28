@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/6d8cfbdf-7510-48d7-98ff-a8c59fe4d6c9/resourceGroups/OpenAIChatBot/providers/Microsoft.Web/sites/openaichatbotexamplereact",
+    "appService.deploySubpath": "reactapp\\build"
+}
