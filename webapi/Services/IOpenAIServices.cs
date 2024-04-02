@@ -2,6 +2,6 @@
 {
     public interface IOpenAIServices
     {
-        Task<string> GetChatGPTResponse(string prompt);
+        Task<string> GetChatGPTResponse(string prompt, int chatrole);
     }
 }

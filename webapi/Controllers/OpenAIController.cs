@@ -21,9 +21,9 @@ namespace ChatBot.Controllers
 
         [HttpGet]
         [Route("GetChatGPTResponse")]
-        public async Task<IActionResult> ChatGPTResponse(string prompt)
+        public async Task<IActionResult> ChatGPTResponse(string prompt, int chatrole)
         {
-            string result = await _openAIServices.GetChatGPTResponse(prompt);
+            string result = await _openAIServices.GetChatGPTResponse(prompt, chatrole);
             return Ok(result);
         }
     }

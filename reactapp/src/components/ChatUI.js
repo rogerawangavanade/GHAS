@@ -9,7 +9,8 @@ function ChatApp() {
     const fetchData = async (prompt) => {
         try {
             const service = new ChatService();
-            const text = await service.getChatGPTResponse(prompt);
+            // get response from ChatGPT using prompt with system role as the second parameter.
+            const text = await service.getChatGPTResponse(prompt, 0);
             const message = { text: text, sender: 'User 2' };
             setMessages((prevMessages) => [...prevMessages, message]);
         }
