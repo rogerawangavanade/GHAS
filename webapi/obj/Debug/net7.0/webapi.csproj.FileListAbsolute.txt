@@ -35,3 +35,4 @@ C:\Users\roger.a.wang\training\OpenAIExample\OpenAIExample\webapi\bin\Debug\net7
 C:\Users\roger.a.wang\training\OpenAIExample\OpenAIExample\webapi\bin\Debug\net7.0\Azure.Core.dll
 C:\Users\roger.a.wang\training\OpenAIExample\OpenAIExample\webapi\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\roger.a.wang\training\OpenAIExample\OpenAIExample\webapi\bin\Debug\net7.0\System.Memory.Data.dll
+C:\Users\roger.a.wang\training\OpenAIExample\OpenAIExample\webapi\obj\Debug\net7.0\webapi.sourcelink.json

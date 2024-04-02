@@ -35,3 +35,4 @@ C:\Users\roger.a.wang\training\OpenAIExample\OpenAIExample\webapi\obj\Release\ne
 C:\Users\roger.a.wang\training\OpenAIExample\OpenAIExample\webapi\obj\Release\net7.0\webapi.pdb
 C:\Users\roger.a.wang\training\OpenAIExample\OpenAIExample\webapi\obj\Release\net7.0\webapi.genruntimeconfig.cache
 C:\Users\roger.a.wang\training\OpenAIExample\OpenAIExample\webapi\obj\Release\net7.0\ref\webapi.dll
+C:\Users\roger.a.wang\training\OpenAIExample\OpenAIExample\webapi\obj\Release\net7.0\webapi.sourcelink.json
