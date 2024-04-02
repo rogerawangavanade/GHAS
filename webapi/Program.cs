@@ -12,8 +12,8 @@ builder.Services.AddCors(options =>
     {
         builder
              //LOCALCODE
-             .WithOrigins("https://openaichatbotreactservice.azurewebsites.net")
-            //.WithOrigins("https://localhost:3000")
+            // .WithOrigins("https://openaichatbotreactservice.azurewebsites.net")
+            .WithOrigins("https://localhost:3000")
             .AllowAnyHeader()
             .AllowAnyMethod();
     });

@@ -16,13 +16,13 @@ const Navbar = () => {
             Home
           </Link>
         </li>
-        {isAuthenticated && (
+        {/* {isAuthenticated && ( */}
           <li>
             <Link to="/ChatBot" color="inherit" variant="h6">
               ChatBot
             </Link>
           </li>
-        )}
+        {/* )} */}
         <li className="expand-button">
           {isAuthenticated ? <SignOutButton /> : <SignInButton />}
         </li>
