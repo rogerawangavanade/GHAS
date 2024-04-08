@@ -54,7 +54,7 @@ namespace OpenAIApp.Services
 
             chatCompletionList[chatrole].Messages.Add(new ChatMessage(ChatRole.User, prompt));
 
-            Response<StreamingChatCompletions> response = await client.GetChatCompletionsStreamingAsync(deploymentOrModelName: "gpt35turbochatbot", chatCompletionList[chatrole]
+            Response<StreamingChatCompletions> response = await client.GetChatCompletionsStreamingAsync(deploymentOrModelName: "gpt-4-32k", chatCompletionList[chatrole]
             );
 
 
