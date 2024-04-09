@@ -9,12 +9,30 @@ namespace OpenAIApp.Services
     {
         private readonly OpenAIConfig _openAIConfig;
         public OpenAIClient? client { get; set; }
+        public const string searchEndpoint = "https://rogerwangaisearch.search.windows.net";
+        public const string searchKey = "01FGwhLFLJqPXkdVTUczZEgzyetpsoRISgwtxb0IaHAzSeAU8pQV";
+        public const string searchIndexName = "productinfo";
+
 
         public static List<ChatCompletionsOptions> chatCompletionList = new List<ChatCompletionsOptions>()
         {
             new ChatCompletionsOptions
             {
-                Messages = { new ChatMessage(ChatRole.System, "You are an AI assistant that helps people find information.") },
+                Messages = { new ChatMessage(ChatRole.System, "You are an AI assistant that helps people find information. You are not limited to answer questions from the retrieved data. You may answer any type of question.") },
+                AzureExtensionsOptions = new AzureChatExtensionsOptions()
+                {
+                    Extensions =
+                    {
+                        new AzureCognitiveSearchChatExtensionConfiguration()
+                        {
+                            SearchEndpoint = new Uri(searchEndpoint),
+                            IndexName = searchIndexName,
+                            SearchKey = new AzureKeyCredential(searchKey!),
+                            QueryType = AzureCognitiveSearchQueryType.Simple,
+                            // Parameters = FromString([object Object])
+                        }
+                    }
+                },
                 Temperature = (float)0.1,
                 MaxTokens = 800,
                 NucleusSamplingFactor = (float)0.95,

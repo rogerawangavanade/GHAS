@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChatService } from '../Services/ChatService';
 import "./ChatUI.css";
-function ChatApp() {
+function ChatApp({ chatroleState }) {
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState('');
 
@@ -10,7 +10,8 @@ function ChatApp() {
         try {
             const service = new ChatService();
             // get response from ChatGPT using prompt with system role as the second parameter.
-            const text = await service.getChatGPTResponse(prompt, 0);
+            console.log(typeof chatroleState);
+            const text = await service.getChatGPTResponse(prompt, chatroleState);
             const message = { text: text, sender: 'User 2' };
             setMessages((prevMessages) => [...prevMessages, message]);
         }
