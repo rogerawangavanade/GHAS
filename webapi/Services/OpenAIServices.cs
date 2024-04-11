@@ -88,4 +88,6 @@ namespace OpenAIApp.Services
             return completion;
         }
     }
+
+
 }

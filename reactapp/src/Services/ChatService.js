@@ -16,4 +16,16 @@ export class ChatService {
             throw new Error(`Error fetching chat conversation: ${error.message}`);
         }
     }
+
+    async getOpenWeatherResponse(lat, long) {
+        try {
+            // Include the 'query' parameter in the URL
+            const url = `${this.baseUrl}/api/Weather/GetOpenWeatherResponse?latitude=${lat}&longitude=${long}`;
+            const request = await fetch(url);
+            const data = await request.text();
+            return data;
+        } catch (error) {
+            throw new Error(`Error retrieving weather information: ${error.message}`);
+        }
+    }
 }

@@ -13,7 +13,19 @@ export default function ChatBot() {
 
     return (
         <div className="body-content">
-            <h1> ChatBot {chatroleState} </h1>
+            {(() => {
+                switch (chatroleState) {
+                    case -1:
+                        return <h1> ChatBot </h1>;
+                    case 0: 
+                        return <h1> Fine-Tuning </h1>;
+                    case 1:
+                        return <h1> AI Assistant </h1>;
+                    case 2:
+                        return <h1> WeatherBot </h1>;
+                }
+            })()}
+
 
             {chatroleState == -1 ?
                 <CardList handleClick={handleClick} /> :

@@ -20,7 +20,7 @@ const CardList = ({handleClick}) => {
                 handleClick={() => handleClick(1)}
             />
             <Card
-                title="Card 3"
+                title="WeatherBot"
                 imageSrc={image3}
                 handleClick={() => handleClick(2)}
             />

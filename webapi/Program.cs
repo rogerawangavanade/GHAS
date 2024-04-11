@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.Configure<OpenAIConfig>(builder.Configuration.GetSection("OpenAI"));
+builder.Services.Configure<OpenWeatherConfig>(builder.Configuration.GetSection("OpenWeather"));
 builder.Services.AddControllers();
 builder.Services.AddCors(options =>
 {
@@ -22,8 +23,10 @@ builder.Services.AddCors(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHttpClient();
 
 builder.Services.AddScoped<IOpenAIServices, OpenAIServices>();
+builder.Services.AddScoped<OpenWeatherService>();
 
 var app = builder.Build();
 
