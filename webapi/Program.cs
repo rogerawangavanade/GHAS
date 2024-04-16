@@ -2,7 +2,7 @@ using OpenAIApp.Congurations;
 using OpenAIApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-
+// Push Test
 // Add services to the container.
 builder.Services.Configure<OpenAIConfig>(builder.Configuration.GetSection("OpenAI"));
 builder.Services.AddControllers();
