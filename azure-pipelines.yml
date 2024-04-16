@@ -27,7 +27,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    cd ReactAppFolder
+    cd reactapp
     npm install
     npm run build
   displayName: 'Build React App'
@@ -36,5 +36,5 @@ steps:
   displayName: 'Build .NET WebAPI Project'
   inputs:
     command: 'build'
-    projects: '**/YourWebAPIProject.csproj'
+    projects: '**/webapi.csproj'
     arguments: '--configuration Release'
