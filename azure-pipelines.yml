@@ -1,0 +1,40 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: NuGetToolInstaller@1
+  displayName: 'Use NuGet 5.8.0'
+  inputs:
+    versionSpec: 5.8.0
+
+- task: NuGetCommand@2
+  displayName: 'Restore NuGet packages'
+  inputs:
+    restoreSolution: '**/*.sln'
+
+- task: MSBuild@1
+  displayName: 'Build solution'
+  inputs:
+    solution: '**/*.sln'
+    msbuildArguments: '/p:Configuration=Release'
+
+- task: NodeTool@0
+  inputs:
+    versionSpec: '20.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    cd ReactAppFolder
+    npm install
+    npm run build
+  displayName: 'Build React App'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Build .NET WebAPI Project'
+  inputs:
+    command: 'build'
+    projects: '**/YourWebAPIProject.csproj'
+    arguments: '--configuration Release'
