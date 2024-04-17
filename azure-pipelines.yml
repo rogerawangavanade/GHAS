@@ -1,10 +1,13 @@
 trigger:
 - main
 
+#pool:
+#  name: Default
+#  demands:
+#  - agent.name -equals AgentSelfHosted
+
 pool:
-  name: Default
-  demands:
-  - agent.name -equals AgentSelfHosted
+  vmImage: 'windows-latest'
 
 steps:
 - task: AdvancedSecurity-Codeql-Init@1
