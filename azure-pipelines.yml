@@ -38,3 +38,6 @@ steps:
     command: 'build'
     projects: '**/webapi.csproj'
     arguments: '--configuration Release'
+
+- task: AdvancedSecurity-Dependency-Scanning@1 
+  displayName: 'Advanced Security Dependency Scanning' 
