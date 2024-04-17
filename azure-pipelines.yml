@@ -10,7 +10,7 @@ steps:
 
 - task: AdvancedSecurity-Codeql-Init@1
   inputs: 
-    language: csharp 
+    language: "csharp" 
   displayName: 'Advanced Security Initialize CodeQL' 
 
 - task: NuGetToolInstaller@1
