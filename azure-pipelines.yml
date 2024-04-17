@@ -7,11 +7,6 @@ pool:
   - agent.name -equals AgentSelfHosted
 
 steps:
-- task: AdvancedSecurity-Codeql-Init@1
-  inputs: 
-    language: "javascript" 
-  displayName: 'Advanced Security Initialize CodeQL' 
-
 - task: NuGetToolInstaller@1
   displayName: 'Use NuGet 5.8.0'
   inputs:
@@ -32,6 +27,11 @@ steps:
   inputs:
     versionSpec: '20.x'
   displayName: 'Install Node.js'
+
+- task: AdvancedSecurity-Codeql-Init@1
+  inputs: 
+    language: "javascript" 
+  displayName: 'Advanced Security Initialize CodeQL'   
 
 - script: |
     cd reactapp
