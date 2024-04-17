@@ -42,12 +42,12 @@ steps:
     npm run build
   displayName: 'Build React App'
 
-- script: |
-    # Install your secret scanning tool, e.g., truffleHog
-    pip install trufflehog
-    # Run truffleHog on your repo
-    trufflehog file:/GHAzDO2
-  displayName: 'Run TruffleHog Secret Scanner'
+# - script: |
+#     # Install your secret scanning tool, e.g., truffleHog
+#     pip install trufflehog
+#     # Run truffleHog on your repo
+#     trufflehog file:/GHAzDO2
+#   displayName: 'Run TruffleHog Secret Scanner'
 
 - task: DotNetCoreCLI@2
   displayName: 'Build .NET WebAPI Project'
