@@ -54,3 +54,8 @@ steps:
 
 - task: AdvancedSecurity-Codeql-Analyze@1 
   displayName: 'Advanced Security Code Scanning' 
+
+- task: CmdLine@2
+  inputs:
+    script: 'docker run --rm -v $(System.DefaultWorkingDirectory):/src zricethezav/gitleaks detect --source="/src" --verbose'
+  displayName: 'Secret Scanning'
