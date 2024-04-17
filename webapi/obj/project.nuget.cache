@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "u/bYZmpXjlraM3qPaH7IzNTEW/R1dW9joYMgGDxnV+Q6fTceH1d8x+JwNq+JNC/AWbrOCAAqgF4X1MPkUDdmTA==",
+  "dgSpecHash": "54J2qgAVTP+QRAbuwl9lgidT4s3Ol6nIr+dTtOzb2luTcNS2RVe5jJuqPIsjnXlqW+JhTykowIyCbtKNdb87YQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\roger.a.wang\\training\\OpenAIExample\\OpenAIExample\\webapi\\webapi.csproj",
+  "projectFilePath": "C:\\Users\\roger.a.wang\\Source\\Repos\\GHAzDO2\\webapi\\webapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\roger.a.wang\\.nuget\\packages\\azure.ai.openai\\1.0.0-beta.7\\azure.ai.openai.1.0.0-beta.7.nupkg.sha512",
     "C:\\Users\\roger.a.wang\\.nuget\\packages\\azure.core\\1.34.0\\azure.core.1.34.0.nupkg.sha512",
