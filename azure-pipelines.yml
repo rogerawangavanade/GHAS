@@ -7,6 +7,12 @@ pool:
   - agent.name -equals AgentSelfHosted
 
 steps:
+
+- task: AdvancedSecurity-Codeql-Init@1
+  inputs: 
+    language: csharp 
+  displayName: 'Advanced Security Initialize CodeQL' 
+
 - task: NuGetToolInstaller@1
   displayName: 'Use NuGet 5.8.0'
   inputs:
@@ -43,3 +49,6 @@ steps:
 
 - task: AdvancedSecurity-Dependency-Scanning@1 
   displayName: 'Advanced Security Dependency Scanning' 
+
+- task: AdvancedSecurity-Codeql-Analyze@1 
+  displayName: 'Advanced Security Code Scanning' 
