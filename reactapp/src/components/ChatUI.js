@@ -4,10 +4,16 @@ import "./ChatUI.css";
 function ChatApp() {
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState('');
+    const dist = 9;
+    const loc = null;
 
     // Initial response from ChatGPT (runs once)
     const fetchData = async (prompt) => {
         try {
+            if (dist < 10)
+                loc = "here";
+            else
+                loc = "there";
             const service = new ChatService();
             const text = await service.getChatGPTResponse(prompt);
             const message = { text: text, sender: 'User 2' };
