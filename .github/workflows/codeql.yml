@@ -82,11 +82,10 @@ jobs:
     - if: matrix.build-mode == 'manual'
       name: Build and Run .NET 8
       run: |
-        # Replace these commands with the build and run steps for your .NET project
-        echo 'Building .NET 8 project...'
-        dotnet build
-        echo 'Running .NET 8 project...'
-        dotnet run --project ../../webapi.csproj
+          echo 'Building .NET 8 project...'
+          dotnet build ../../webapi/webapi.csproj --configuration Release
+          echo 'Running .NET 8 project...'
+          dotnet ../../webapi/bin/Release/net8.0/webapi.dll
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
