@@ -82,11 +82,12 @@ jobs:
     - if: matrix.build-mode == 'manual'
       name: Build and Run .NET 8
       run: |
-          winget install Microsoft.DotNet.SDK.8
+          nuget install -Version 5.8.0
+          nuget restore ../../**/*.sln
+          msbuild ../../**/*.sln /p:Configuration=Release
+          dotnet build ../../**/webapi.csproj --configuration Releas
           echo 'Building .NET 8 project...'
           dotnet build ../../webapi/webapi.csproj --configuration Release
-          echo 'Running .NET 8 project...'
-          dotnet ../../webapi/bin/Release/net8.0/webapi.dll
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
