@@ -86,7 +86,7 @@ jobs:
         echo 'Building .NET 8 project...'
         dotnet build
         echo 'Running .NET 8 project...'
-        dotnet run --project OpenAIExample.csproj
+        dotnet run --project **/webapi.csproj
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
