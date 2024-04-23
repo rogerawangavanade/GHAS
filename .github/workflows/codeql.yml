@@ -82,6 +82,7 @@ jobs:
     - if: matrix.build-mode == 'manual'
       name: Build and Run .NET 8
       run: |
+          winget install Microsoft.DotNet.SDK.8
           echo 'Building .NET 8 project...'
           dotnet build ../../webapi/webapi.csproj --configuration Release
           echo 'Running .NET 8 project...'
