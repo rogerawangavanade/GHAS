@@ -17,6 +17,13 @@ function App({ instance }) {
     );
 }
 
+function endsWith(x, y) {
+
+    let index = x.lastIndexOf(y);
+    return x.lastIndexOf(y) === x.length - y.length;
+
+}
+
 const Pages = () => {
     return (
         <Routes>
